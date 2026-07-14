@@ -1,14 +1,11 @@
 // Assignment 1.2: Review and Practice HTML/CSS/JavaScript
 // Carmen Amond 07/12/26
 
-const school = "University of Advancing Technology";
+const school = "the University of Advancing Technology";
 
-function greetUser(userName){
-    console.log("Hi " + userName);
-}
 
 function showGreeting(userName){
-    greetUser(userName);
+    console.log("Hello " + userName + "!");
     console.log("Welcome to " + school);
 }
 
@@ -22,12 +19,11 @@ function gradTime(gradYear){
 }
 
 showGreeting("Carmen");
-greetUser("Carmen");
 info("Computer Science", "carmen.amond@university.edu");
 gradTime(2028);
-greetUser("Aiden");
+showGreeting("Aiden");
 info("Mathematics", "aiden.cassidy@university.edu");
 gradTime(2032);
-greetUser("Lincoln");
+showGreeting("Lincoln");
 info("Physics", "lincoln.willison@university.edu");
 gradTime(2029);
