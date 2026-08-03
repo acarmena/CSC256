@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+    <link rel="stylesheet" href="Reset.css">
+</head>
+
+<body>
+    <main class="movie-container">
+        <h1>Movie List Organizer</h1>
+
+        <p>Enter movie titles one at a time.</p>
+
+        <label for="movieTitle">Movie Title:</label>
+
+        <input
+            type="text"
+            id="movieTitle"
+            placeholder="Enter a movie title"
+        >
+
+        <div class="button-area">
+            <button id="addButton">Add Movie</button>
+            <button id="displayButton">Display List</button>
+            <button id="resetButton">Reset</button>
+        </div>
+
+        <p id="message"></p>
+
+        <section class="list-area">
+            <h2>Sorted Movie List</h2>
+            <div id="movieList">
+                <p>No movies have been displayed yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="Reset.js"></script>
+</body>
+</html>
