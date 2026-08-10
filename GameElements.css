@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+    --ink:#e9f7ff;
+    --muted:#7895a7;
+    --cyan:#4fffe1;
+    --pink:#ff477e;
+    --panel:#101c29;
+    --line:#263b4b
+    }
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    color:var(--ink);
+    font-family:'Chakra Petch',sans-serif;
+    background:#071018;
+    overflow-x:hidden
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(rgba(79,255,225,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(79,255,225,.025) 1px,transparent 1px);
+    background-size:38px 38px;
+    mask-image:linear-gradient(to right,#000,transparent)
+}
+
+.layout{
+    width:min(1120px,92%);
+    min-height:100vh;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:8vw;
+    align-items:center;
+    padding:56px 0
+}
+.eyebrow{
+    font:700 12px 'Space Mono';
+    letter-spacing:.22em;
+    color:var(--cyan)
+}
+h1{
+    font-size:clamp(54px,7vw,90px);
+    line-height:.88;
+    margin:22px 0;
+    text-transform:uppercase;
+    letter-spacing:-.05em
+}
+h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px var(--pink)
+}
+.intro>p:not(.eyebrow){
+    color:var(--muted);
+    font-size:18px;
+    max-width:430px;
+    line-height:1.65
+}
+.mission{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-top:48px;
+    border-left:2px solid var(--cyan);
+    padding:10px 14px;
+    background:linear-gradient(90deg,rgba(79,255,225,.08),transparent)
+}
+.mission>span{
+    color:var(--cyan);
+    font-size:24px
+}
+.mission strong,.mission small{
+    display:block
+}
+.mission small{
+    color:var(--muted);
+    margin-top:3px
+}
+.panel{
+    background:rgba(16,28,41,.91);
+    border:1px solid var(--line);
+    padding:34px;
+    box-shadow:14px 14px 0 #040a0e,0 0 60px rgba(79,255,225,.05)
+}
+.panel-heading,.card-top,.health-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+.panel-heading{
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;
+    margin-bottom:25px
+}
+.panel-heading span,.card-top{
+    font:700 10px 'Space Mono';
+    letter-spacing:.13em;
+    color:var(--muted)
+}
+h2{
+    margin:4px 0 0;
+    font-size:28px
+}
+.online{
+    color:var(--cyan)!important
+}
+label{
+    display:block;}
+
+.player-card{
+    position:relative;overflow:hidden;
+    margin-top:28px;border:1px solid var(--cyan);
+    padding:24px;background:linear-gradient(135deg,rgba(79,255,225,.08),transparent 55%),#09131d;
+    animation:reveal .5s ease both
+}
+
+.scanline{
+    position:absolute;
+    inset:-100% 0 auto;height:50%;background:linear-gradient(transparent,rgba(79,255,225,.08),transparent);
+    animation:scan 3s linear infinite
+}
+
+.avatar{
+    width:66px;
+    height:66px;
+    margin:22px 0 14px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--pink);
+    color:var(--pink);
+    font-size:25px;
+    font-weight:700;
+    clip-path:polygon(12% 0,100% 0,100% 88%,88% 100%,0 100%,0 12%)
+}
+
+.card-name small,.stat-grid small{
+    display:block;color:var(--muted);font:10px 'Space Mono';
+    letter-spacing:.12em
+}
+
+.card-name strong{
+    font-size:30px
+}
+
+.stat-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    margin:20px 0;
+    gap:10px
+}
+
+.stat-grid strong{
+    display:block;
+    margin-top:5px;
+    color:var(--cyan)
+}
+.health-row{
+    font:700 11px 'Space Mono';
+    letter-spacing:.08em
+}
+
+.meter{
+    height:7px;
+    background:#21313c;
+    margin-top:8px
+}
+
+.meter span{
+    display:block;
+    height:100%;
+    background:linear-gradient(90deg,var(--pink),var(--cyan));
+    transition:width .6s ease
+}
+
+.ready{
+    color:var(--cyan);
+    font:700 10px 'Space Mono';
+    margin:22px 0 0
+}
+
+@keyframes reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes scan{to{transform:translateY(400%)}}@media(max-width:800px){.layout{grid-template-columns:1fr;padding:48px 0}.intro{padding-top:20px}h1{font-size:58px}.panel{padding:24px}.two-column{grid-template-columns:1fr}}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Quest — Player Setup</title>
+  <link rel="stylesheet" href="GameElements.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">SYSTEM // NEW RECRUIT</p>
+      <h1 id="page-title">Build your<br><span>battle card.</span></h1>
+      <p>Enter your stats to generate a player profile before deploying into Neon Quest.</p>
+      <div class="mission"><span>◈</span><div><strong>Mission 01</strong><small>Configure your loadout</small></div></div>
+    </section>
+
+    <section class="panel">
+      <form id="player-form">
+        <div class="panel-heading">
+          <div><span>PLAYER CONFIG</span><h2>Identity & loadout</h2></div>
+          <span class="online">● ONLINE</span>
+        </div>
+
+        <label for="username">User name</label>
+        <input id="username" name="username" type="text" maxlength="20" placeholder="e.g. PixelNinja" required>
+
+        <label for="weapon">Weapon</label>
+        <input id="weapon" name="weapon" type="text" maxlength="20" placeholder="e.g. Plasma Blade">
+        <select id="weapon" name="weapon" aria-label="Select your weapon">
+          <option value="" selected disabled>Select your weapon</option>
+          <option>Plasma Blade</option><option>Gravity Hammer</option>
+          <option>Photon Bow</option><option>Invisibility Cloak</option>
+          <option>Arc Blaster</option>
+        </select>
+
+        <div class="two-column">
+          <div><label for="health">Max Health</label><input id="health" name="health" type="number" min="0" max="100" value="50" required></div>
+          <div><label for="points">Point total</label><input id="points" name="points" type="number" min="0" max="999999" value="100" required></div>
+        </div>
+
+        <button type="submit">GENERATE PLAYER CARD <span>→</span></button>
+      </form>
+
+      <section id="player-card" class="player-card" aria-live="polite" hidden>
+        <div class="scanline"></div>
+        <div class="card-top"><span>NEON QUEST // ID</span><span id="card-number"></span></div>
+        <div class="avatar" id="avatar">PN</div>
+        <div class="card-name"><small>PLAYER</small><strong id="out-name"></strong></div>
+        <div class="stat-grid">
+          <div><small>WEAPON</small><strong id="out-weapon"></strong></div>
+          <div><small>POINTS</small><strong id="out-points"></strong></div>
+        </div>
+        <div class="health-row"><span>MAX HEALTH</span><b id="out-health"></b></div>
+        <div class="meter"><span id="health-meter"></span></div>
+        <p class="ready">STATUS: READY FOR DEPLOYMENT</p>
+      </section>
+    </section>
+  </main>
+  <script src="GameElements.js"></script>
+</body>
+</html>
