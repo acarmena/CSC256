@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cornerstone Checkers</title>
+  <link rel="stylesheet" href="checkers.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="kicker">A CLASSIC BOARD GAME</p><h1>CORNERSTONE<br><em>CHECKERS</em></h1></div>
+      <div class="rules"><span>HOW TO PLAY</span><p>Select a piece, then choose a glowing square. Captures are required when available. Reach the opposite edge to crown a king.</p></div>
+    </header>
+
+    <section class="game-shell">
+      <aside class="player red active" id="red-player">
+        <span class="mini-piece"></span><div><small>PLAYER ONE</small><strong>RED</strong></div><b id="red-count">12</b>
+      </aside>
+
+      <div class="center">
+        <div class="status" id="status" role="status" aria-live="polite">Red's turn — select a piece</div>
+        <div id="board" class="board" role="grid" aria-label="Checkers board"></div>
+        <div class="controls">
+          <button id="restart" type="button">↻ NEW GAME</button>
+          <span>SELECT • MOVE • CAPTURE • CROWN</span>
+        </div>
+      </div>
+
+      <aside class="player charcoal" id="charcoal-player">
+        <span class="mini-piece"></span><div><small>PLAYER TWO</small><strong>CHARCOAL</strong></div><b id="charcoal-count">12</b>
+      </aside>
+    </section>
+  </main>
+  <script src="checkers.js"></script>
+</body>
+</html>
